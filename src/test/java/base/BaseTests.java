@@ -17,11 +17,20 @@ public class BaseTests {
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
 
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        System.out.println(links.size());
+//        List<WebElement> links = driver.findElements(By.tagName("a"));
+//        System.out.println(links.size());
+//
+//        WebElement inputsLink = driver.findElement(By.linkText("Inputs"));
+//        inputsLink.click();
 
-        WebElement inputsLink = driver.findElement(By.linkText("Angie"));
-        inputsLink.click();
+        WebElement scLink = driver.findElement(By.linkText("Shifting Content"));
+        scLink.click();
+
+        WebElement example1 = driver.findElement(By.linkText("Example 1: Menu Element"));
+        example1.click();
+
+        List<WebElement> scMenu = driver.findElements(By.tagName("li"));
+        System.out.println(scMenu.size());
 
         System.out.println(driver.getTitle());
         driver.quit();
